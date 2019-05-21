@@ -1,0 +1,53 @@
+<div [formGroup]="parentFormGroup">
+  <app-basic-controls [basicFormGroup]="parentFormGroup"></app-basic-controls>
+  <div class="grid-container">
+
+    <section>
+      <fieldset formGroupName="forSaleSubGroup">
+        <legend style="white-space: nowrap">Selling By</legend>
+        <mat-radio-group [formControlName]="'byWho'" name="byWho">
+          <!--Mat-radio-group should have the formControl on it—the group will take the value of whatever button the user
+           selects. the user can’t change the value of a specific button, so it doesn’t make sense for material to have
+           implemented an accessor on it-->
+          <mat-radio-button *ngFor="let forSaleByOption of forSaleInfo.forSaleBy"
+                            [value]="forSaleByOption.value"
+                            style="display: flex; flex-direction: column"
+          >
+            {{forSaleByOption.who}}
+            <span></span>
+          </mat-radio-button>
+        </mat-radio-group>
+      </fieldset>
+    </section>
+
+    <section>
+      <fieldset formGroupName="forSaleSubGroup">
+        <legend style="white-space: nowrap">Selling For</legend>
+        <mat-radio-group [formControlName]="'sellingFor'" name="sellingFor">
+          <mat-radio-button #btn *ngFor="let sellingForOption of forSaleInfo.sellingFor"
+                            [value]="sellingForOption.value"
+                            (change)="handleSellingForOption($event)"
+                            style="display: flex; flex-direction: column"
+          >
+            {{sellingForOption.for}}
+            <ng-container *ngIf="btn.checked && btn.value !== 'free'">
+              <span><!--formGroupName="forSaleSubGroup"-->
+                <mat-form-field floatLabel="never" [appearance]="'fill'">
+                  <mat-label></mat-label>
+                  <span class="money">$ </span>
+                  <input #askingPrice
+                         matInput
+                         type="number"
+                         formControlName="sellingForPrice"
+                  >
+                </mat-form-field>
+              </span>
+            </ng-container>
+          </mat-radio-button>
+        </mat-radio-group>
+      </fieldset>
+    </section>
+  </div>
+
+</div>
+

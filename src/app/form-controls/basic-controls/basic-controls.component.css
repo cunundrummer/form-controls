@@ -1,0 +1,17 @@
+mat-form-field {
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.grid-item {
+  /*border: 1px solid blue;*/
+}
+
+.lengthShower {
+  padding-left: 5px;
+  color: #969696;
+}
+

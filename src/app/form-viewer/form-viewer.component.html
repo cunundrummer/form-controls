@@ -1,0 +1,17 @@
+<div>
+  <h3>
+    FormGroups Example - Showing multiple form components
+  </h3>
+</div>
+
+<div>
+  <form [formGroup]="parentFormGroup">
+    <app-for-sale-controls [parentFormGroup]="parentFormGroup"></app-for-sale-controls>
+  </form>
+</div>
+
+<hr>
+<section style="border: 1px solid saddlebrown">
+  <h5>form formgroup -> forSaleGroup value:</h5> {{parentFormGroup.value | json}}
+</section>
+

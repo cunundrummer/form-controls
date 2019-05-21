@@ -1,0 +1,46 @@
+<div [formGroup]="basicFormGroup">
+<fieldset [formGroupName]="'titleDescriptionGroup'" class="grid-container">
+  <legend>
+    Basic Information
+  </legend>
+  <div class="grid-item">
+    <mat-form-field appearance="outline" hintLabel="Enter a descriptive title of at most, 25 letters.">
+      <mat-label>Ad Title</mat-label>
+      <input matInput
+             #adTitleCtrl
+             formControlName="adTitle"
+             type="text"
+             placeholder="Enter a title here" />
+      <span class="lengthShower" matSuffix>{{adTitleCtrl.value.length}} / {{basicValidationInfo.adTitle.maxLength}}</span>
+
+      <mat-error *ngIf="basicFormGroup.controls['adTitle']?.hasError('required')">
+        A title is required.
+      </mat-error>
+      <mat-error *ngIf="basicFormGroup.controls['adTitle']?.errors?.minlength">
+          You need at least {{basicFormGroup.controls['adTitle'].errors?.minlength?.requiredLength}}
+          characters for a title.
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="grid-item">
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput
+                formControlName="adDescription"
+                placeholder="Enter a detailed description here"
+                [rows]="basicValidationInfo.adDescription.rows"
+      >
+      </textarea>
+      <mat-error *ngIf="basicFormGroup.controls['adDescription']?.hasError('required')">
+        A description is required.
+      </mat-error>
+      <mat-error *ngIf="basicFormGroup.controls['adDescription']?.errors?.minlength">
+        You need at least {{basicFormGroup.controls['adDescription']?.errors?.minlength?.requiredLength}}
+        characters for a title.
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+</fieldset>
+</div>
