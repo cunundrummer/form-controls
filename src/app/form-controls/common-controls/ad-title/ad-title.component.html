@@ -1,0 +1,19 @@
+<div [formGroup]="attachedToFormGroup">
+  <mat-form-field appearance="outline" [hintLabel]="adTitleOptions.hints.hintLabel">
+    <mat-label>Ad Title</mat-label>
+    <input matInput
+           #adTitleCtrl
+           formControlName="adTitle"
+           type="text"
+           placeholder="Enter a title here" />
+    <span class="lengthShower" matSuffix>{{adTitleCtrl.value.length}} / {{adTitleOptions.validations.maxlength}}</span>
+
+    <mat-error *ngIf="attachedToFormGroup.controls['adTitle']?.hasError('required')">
+      {{attachedToFormGroup.controls['adTitle']?.errors | errorMessages}}
+    </mat-error>
+    <mat-error *ngIf="attachedToFormGroup.controls['adTitle']?.errors?.minlength">
+      {{attachedToFormGroup.controls['adTitle']?.errors | errorMessages}}
+    </mat-error>
+  </mat-form-field>
+</div>
+

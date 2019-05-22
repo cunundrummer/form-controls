@@ -15,3 +15,8 @@
   <h5>form formgroup -> forSaleGroup value:</h5> {{parentFormGroup.value | json}}
 </section>
 
+<fieldset>
+  <legend>Individual controls</legend>
+  <app-ad-title [attachedToFormGroup]="adTitleFormGroup"></app-ad-title>
+  <app-ad-description [attachedToFormGroup]="adDescriptionFormGroup"></app-ad-description>
+</fieldset>

@@ -1,0 +1,18 @@
+<div [formGroup]="attachedToFormGroup">
+  <mat-form-field appearance="outline" [hintLabel]="adDescriptionOptions?.hints?.hintLabel">
+    <mat-label>Description</mat-label>
+    <textarea matInput
+              formControlName="adDescription"
+              placeholder="Enter a detailed description here"
+              [rows]="adDescriptionOptions.attributes.rows"
+              [cols]="adDescriptionOptions.attributes.cols"
+    >
+      </textarea>
+    <mat-error *ngIf="attachedToFormGroup.controls['adDescription']?.hasError('required')">
+      {{attachedToFormGroup.controls['adDescription']?.errors | errorMessages}}
+    </mat-error>
+    <mat-error *ngIf="attachedToFormGroup.controls['adDescription']?.errors?.minlength">
+      {{attachedToFormGroup.controls['adDescription']?.errors | errorMessages}}
+    </mat-error>
+  </mat-form-field>
+</div>
