@@ -4,19 +4,24 @@
   </h3>
 </div>
 
-<div>
-  <form [formGroup]="parentFormGroup">
-    <app-for-sale-controls [parentFormGroup]="parentFormGroup"></app-for-sale-controls>
-  </form>
-</div>
-
-<hr>
-<section style="border: 1px solid saddlebrown">
-  <h5>form formgroup -> forSaleGroup value:</h5> {{parentFormGroup.value | json}}
-</section>
-
 <fieldset>
   <legend>Individual controls</legend>
-  <app-ad-title [attachedToFormGroup]="adTitleFormGroup"></app-ad-title>
-  <app-ad-description [attachedToFormGroup]="adDescriptionFormGroup"></app-ad-description>
+  <app-ad-title class="fieldsetItem" [attachedToFormGroup]="adTitleFormGroup"></app-ad-title>
+  <app-ad-description class="fieldsetItem" [attachedToFormGroup]="adDescriptionFormGroup"></app-ad-description>
+  <app-for-sale-by #forSaleBy class="fieldsetItem" [attachedToFormGroup]="adForSaleFormGroup"></app-for-sale-by>
+  <app-for-sale-selling-for class="fieldsetItem" [attachedToFormGroup]="adForSaleFormGroup"></app-for-sale-selling-for>
+  <app-for-sale-conditions class="fieldsetItem" [attachedToFormGroup]="adForSaleConditionGroup"></app-for-sale-conditions>
+</fieldset>
+
+<fieldset>
+  <legend>Form Info</legend>
+  <div>
+    status:
+    <br />
+    allFormGroups value: {{adTitleFormGroup.value | json}}
+    <br />
+    adForSaleFromGroup: {{adForSaleFormGroup.value | json}}
+    <br />
+    {{adForSaleFormGroup.controls.byWho.valid}}
+  </div>
 </fieldset>

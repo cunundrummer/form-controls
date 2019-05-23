@@ -6,6 +6,9 @@ fieldset {
   display: inline-block;
   border-radius: 4px;
 }
+
+.fieldsetItem {}
+
 .money {
   color: green;
 }

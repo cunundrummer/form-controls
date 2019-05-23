@@ -1,0 +1,17 @@
+<fieldset [formGroup]="attachedToFormGroup">
+  <legend>Condition</legend>
+  <mat-radio-group formControlName="condition" name="condition">
+    <mat-radio-button *ngFor="let condition of conditions">
+      {{condition.type}}
+    </mat-radio-button>
+  </mat-radio-group>
+  <mat-checkbox>with defect</mat-checkbox>
+  <span>
+    <mat-form-field [appearance]="'fill'">
+      <!--todo make input select-->
+      <mat-label>Describe</mat-label>
+      <input matInput>
+    </mat-form-field>
+
+  </span>
+</fieldset>

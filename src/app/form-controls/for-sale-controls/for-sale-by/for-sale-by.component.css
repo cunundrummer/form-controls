@@ -1,0 +1,11 @@
+.space {
+  margin-top: 25px;
+}
+
+mat-radio-button {
+  display: block;
+}
+
+fieldset {
+  width: 50%;
+}

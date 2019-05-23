@@ -1,4 +1,4 @@
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 const fb: FormBuilder = new FormBuilder();
 export const adTitleFormGroup: FormGroup = fb.group({
@@ -17,8 +17,11 @@ export const adDescriptionGroup: FormGroup = fb.group({
 
 // tslint:disable-next-line:variable-name
 export const forSaleByGroup: FormGroup = fb.group({
-  byWho: [''],
-  sellingFor: [''],
+  byWho: ['', [Validators.required]],
+  sellingFor: new FormControl({value: '', disabled: true}, Validators.required),
   sellingForPrice: ['']
 });
 
+export const forSaleConditionsGroup: FormGroup = fb.group({
+  condition: ['']
+});

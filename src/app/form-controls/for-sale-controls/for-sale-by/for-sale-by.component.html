@@ -1,0 +1,10 @@
+<fieldset class="space" [formGroup]="attachedToFormGroup">
+  <legend>I am selling by</legend>
+  <mat-radio-group formControlName="byWho" name="byWho" required (change)="enableNext($event)">
+    <mat-label>Choose: </mat-label>
+    <mat-radio-button *ngFor="let who of forSaleInfo.forSaleBy" [value]="who.value">
+      {{who.who}}
+    </mat-radio-button>
+  </mat-radio-group>
+</fieldset>
+

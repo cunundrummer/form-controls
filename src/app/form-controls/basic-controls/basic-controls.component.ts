@@ -1,6 +1,5 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { BasicConstants } from '../../formgroups/models/basic-forms-starter';
 
 @Component({
   selector: 'app-basic-controls',
@@ -9,8 +8,6 @@ import { BasicConstants } from '../../formgroups/models/basic-forms-starter';
 })
 export class BasicControlsComponent implements OnInit {
   @Input() basicFormGroup: FormGroup;
-
-  readonly basicValidationInfo = BasicConstants;
 
   constructor() { }
 

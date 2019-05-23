@@ -1,0 +1,23 @@
+<fieldset class="space" [formGroup]="attachedToFormGroup">
+  <legend>I am selling for</legend>
+  <mat-radio-group formControlName="sellingFor" name="sellingFor">
+    <mat-label>Choose:</mat-label>
+    <mat-radio-button #btn *ngFor="let by of forSaleInfo" [value]="by.value" (change)="handleSellingForOption($event)">
+      {{by.for}}
+      <ng-container *ngIf="btn.checked && btn.value !== 'free'">
+        <span>
+          <mat-form-field floatLabel="never" [appearance]="'fill'">
+            <mat-label></mat-label><!--see material docs as to why like this-->
+            <span class="money">$ </span>
+            <input #askingPrice
+                   matInput
+                   type="number"
+                   formControlName="sellingForPrice"
+                   [value]="price.currentPrice.toString()"
+            >
+          </mat-form-field>
+        </span>
+      </ng-container>
+    </mat-radio-button>
+  </mat-radio-group>
+</fieldset>

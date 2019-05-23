@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormBuilder, FormGroup, FormGroupName } from '@angular/forms';
-import { ForSaleConstants } from '../../formgroups/models/basic-forms-starter';
+import { ForSaleConstants } from '../constants';
 
 @Component({
   selector: 'app-for-sale-controls',

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { forSaleGroup } from '../formgroups/models/basic-forms-starter';
-import { FormGroup} from '@angular/forms';
-import { adDescriptionGroup, adTitleFormGroup } from '../form-controls/formGroups';
+import {
+  adDescriptionGroup,
+  adTitleFormGroup,
+  forSaleByGroup,
+  forSaleConditionsGroup
+} from '../form-controls/formGroups';
 
 @Component({
   selector: 'app-form-viewer',
@@ -9,13 +12,12 @@ import { adDescriptionGroup, adTitleFormGroup } from '../form-controls/formGroup
   styleUrls: ['./form-viewer.component.css']
 })
 export class FormViewerComponent implements OnInit {
-  parentFormGroup: FormGroup = forSaleGroup; // testing with
   adTitleFormGroup = adTitleFormGroup;
   adDescriptionFormGroup = adDescriptionGroup;
+  adForSaleFormGroup = forSaleByGroup;
+  adForSaleConditionGroup = forSaleConditionsGroup;
 
   constructor() { }
 
-  ngOnInit() {
-    console.log('forsalegroup in form-viewer component: ', this.parentFormGroup);
-  }
+  ngOnInit() {}
 }
