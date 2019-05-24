@@ -1,0 +1,13 @@
+<mat-form-field class="space-left"  [formGroup]="attachedToFormGroup">
+  <input type="text"
+         placeholder="Pick one"
+         aria-label="" matInput
+         [matAutocomplete]="auto"
+         [formControl]="defectControl"
+  >
+  <mat-autocomplete #auto="matAutocomplete">
+    <mat-option *ngFor="let option of filteredOptions | async" [value]="option.type">
+      {{option.type}}
+    </mat-option>
+  </mat-autocomplete>
+</mat-form-field>

@@ -25,7 +25,8 @@ import { TextWithSelectComponent } from './for-sale-controls/text-with-select/te
     AdDescriptionComponent,
     ForSaleByComponent,
     ForSaleSellingForComponent,
-    ForSaleConditionsComponent
+    ForSaleConditionsComponent,
+    TextWithSelectComponent
   ],
   imports: [
     CommonModule,

@@ -8,20 +8,26 @@
   <legend>Individual controls</legend>
   <app-ad-title class="fieldsetItem" [attachedToFormGroup]="adTitleFormGroup"></app-ad-title>
   <app-ad-description class="fieldsetItem" [attachedToFormGroup]="adDescriptionFormGroup"></app-ad-description>
-  <app-for-sale-by #forSaleBy class="fieldsetItem" [attachedToFormGroup]="adForSaleFormGroup"></app-for-sale-by>
+  <app-for-sale-by class="fieldsetItem" [attachedToFormGroup]="adForSaleFormGroup"></app-for-sale-by>
   <app-for-sale-selling-for class="fieldsetItem" [attachedToFormGroup]="adForSaleFormGroup"></app-for-sale-selling-for>
   <app-for-sale-conditions class="fieldsetItem" [attachedToFormGroup]="adForSaleConditionGroup"></app-for-sale-conditions>
 </fieldset>
 
 <fieldset>
   <legend>Form Info</legend>
-  <div>
-    status:
-    <br />
-    allFormGroups value: {{adTitleFormGroup.value | json}}
+  <!--div><--left for separate testing case->
+    adTitleFormGroup: {{adTitleFormGroup.value | json}}
     <br />
     adForSaleFromGroup: {{adForSaleFormGroup.value | json}}
     <br />
     {{adForSaleFormGroup.controls.byWho.valid}}
-  </div>
+    <br />
+    {{adForSaleConditionGroup.value | json}}
+  </div-->
+  <h5>All formGroups combined values:</h5>
+  <p></p>
+  <section *ngFor="let obj of allGroup.controls">
+    {{obj.value | json}}
+  </section>
 </fieldset>
+

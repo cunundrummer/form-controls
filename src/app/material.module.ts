@@ -15,6 +15,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTreeModule } from '@angular/material';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { MatTreeModule } from '@angular/material';
     MatRadioModule,
     MatTreeModule,
     DragDropModule,
+    MatAutocompleteModule
   ],
   exports: [
     MatSelectModule,
@@ -50,7 +52,8 @@ import { MatTreeModule } from '@angular/material';
     MatListModule,
     MatRadioModule,
     MatTreeModule,
-    DragDropModule
+    DragDropModule,
+    MatAutocompleteModule
   ],
   declarations: []
 })

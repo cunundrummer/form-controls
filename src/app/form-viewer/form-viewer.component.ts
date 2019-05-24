@@ -4,7 +4,8 @@ import {
   adTitleFormGroup,
   forSaleByGroup,
   forSaleConditionsGroup
-} from '../form-controls/formGroups';
+} from '../formgroups/formGroups';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form-viewer',
@@ -12,12 +13,20 @@ import {
   styleUrls: ['./form-viewer.component.css']
 })
 export class FormViewerComponent implements OnInit {
+  allGroup: FormArray;
   adTitleFormGroup = adTitleFormGroup;
   adDescriptionFormGroup = adDescriptionGroup;
   adForSaleFormGroup = forSaleByGroup;
   adForSaleConditionGroup = forSaleConditionsGroup;
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.allGroup = this.fb.array([
+      this.adTitleFormGroup,
+      this.adDescriptionFormGroup,
+      this.adForSaleFormGroup,
+      this.adForSaleConditionGroup
+    ]);
+  }
 }

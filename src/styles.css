@@ -16,6 +16,15 @@ fieldset {
   width: 133.33333%;
 }
 */
+
+.space-top {
+  margin-top: 25px;
+}
+
+.space-left {
+  margin-left: 1.5rem;
+}
+
 .fieldsetItem {}
 
 .money {

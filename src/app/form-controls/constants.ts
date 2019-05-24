@@ -70,7 +70,7 @@ export const AD_FOR_SALE_BY_OPTIONS = function() {
 };
 
 
-export interface ICondtionTypes {
+export interface IConditionTypes {
   type: string;
   description: string;
 }
@@ -78,7 +78,8 @@ export interface IConditions {
   category: {
     id?: string;
     name: string;
-    conditionType: ICondtionTypes[]
+    conditionTypes?: IConditionTypes[],
+    defectTypes?: IConditionTypes[]
   };
 }
 
@@ -86,7 +87,7 @@ export const ForSaleConditionConstants: IConditions[] = [
   {
     category: {
       name: 'clothing/wearables',
-      conditionType: [
+      conditionTypes: [
         {
           type: 'New with tags',
           description: 'A brand-new, unused, and unworn item (including handmade items) in the original packaging (such as the original' +
@@ -105,6 +106,24 @@ export const ForSaleConditionConstants: IConditions[] = [
           type: 'Used',
           description: `An item that has been used or worn previously. See the seller's listing for full details and description of any
                         imperfections`
+        }
+      ],
+      defectTypes: [
+        {
+          type: 'obvious wear and tear',
+          description: 'A well worn item'
+        },
+        {
+          type: 'has minor tear',
+          description: 'not very noticeable'
+        },
+        {
+          type: 'has tear',
+          description: 'ask seller'
+        },
+        {
+          type: 'colour is faded',
+          description: 'not as bright as it used to be.'
         }
       ]
     }

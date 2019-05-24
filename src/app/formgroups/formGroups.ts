@@ -23,5 +23,7 @@ export const forSaleByGroup: FormGroup = fb.group({
 });
 
 export const forSaleConditionsGroup: FormGroup = fb.group({
-  condition: ['']
+  condition: [''],
+  hasDefect: [''],
+  defect: ['']
 });
