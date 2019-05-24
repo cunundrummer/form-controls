@@ -7,6 +7,6 @@
   </mat-radio-group>
   <mat-checkbox #isDefective [formControl]="hasDefectControl" [value]="hasDefectControl.value">with defect</mat-checkbox>
   <span *ngIf="isDefective.checked">
-    <app-text-with-select [attachedToFormGroup]="attachedToFormGroup"></app-text-with-select>
+    <app-autocomplete [attachedToFormGroup]="attachedToFormGroup"></app-autocomplete>
   </span>
 </fieldset>

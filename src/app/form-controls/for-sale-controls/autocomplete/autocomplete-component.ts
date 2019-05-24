@@ -5,11 +5,11 @@ import { ForSaleConditionConstants, IConditionTypes } from '../../constants';
 import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
-  selector: 'app-text-with-select',
-  templateUrl: './text-with-select.component.html',
-  styleUrls: ['./text-with-select.component.css']
+  selector: 'app-autocomplete',
+  templateUrl: './autocomplete-component.html',
+  styleUrls: ['./autocomplete.component.css']
 })
-export class TextWithSelectComponent implements OnInit {
+export class AutocompleteComponent implements OnInit {
   @Input() attachedToFormGroup: FormGroup;
   filteredOptions: Observable<IConditionTypes[]>;
   options: {

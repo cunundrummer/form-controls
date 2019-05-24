@@ -8,7 +8,7 @@ import { ErrorMessagesPipe } from './pipes/error-messages.pipe';
 import { ForSaleByComponent } from './for-sale-controls/for-sale-by/for-sale-by.component';
 import { ForSaleSellingForComponent } from './for-sale-controls/for-sale-selling-for/for-sale-selling-for.component';
 import { ForSaleConditionsComponent } from './for-sale-controls/for-sale-conditions/for-sale-conditions.component';
-import { TextWithSelectComponent } from './for-sale-controls/text-with-select/text-with-select.component';
+import { AutocompleteComponent } from './for-sale-controls/autocomplete/autocomplete-component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { TextWithSelectComponent } from './for-sale-controls/text-with-select/te
     ForSaleByComponent,
     ForSaleSellingForComponent,
     ForSaleConditionsComponent,
-    TextWithSelectComponent
+    AutocompleteComponent
   ],
   exports: [
     AdTitleComponent,
@@ -26,7 +26,7 @@ import { TextWithSelectComponent } from './for-sale-controls/text-with-select/te
     ForSaleByComponent,
     ForSaleSellingForComponent,
     ForSaleConditionsComponent,
-    TextWithSelectComponent
+    AutocompleteComponent
   ],
   imports: [
     CommonModule,
